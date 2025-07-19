@@ -16,7 +16,7 @@ le_edu = joblib.load("le_edu.pkl")
 feature_names = joblib.load("feature_names.pkl")
 
 input_df = pd.DataFrame([{
-    'age': age,
+    'age': [age],
     'education_level': le_edu.transform([education])[0],
     'job_title': le_job.transform([occupation])[0],
     'experience_level': le_exp.transform([experience_level])[0],
