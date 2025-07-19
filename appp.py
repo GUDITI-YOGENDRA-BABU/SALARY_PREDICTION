@@ -2,17 +2,54 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-st.markdown(
-    """
+st.markdown("""
     <style>
+        /* Background for the whole app */
         .stApp {
-            background-image: url("cubes.png");
+            background-image: url('https://www.transparenttextures.com/patterns/connected.png');
             background-size: cover;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* Header text */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            color: #003865;
+        }
+
+        /* Input section box */
+        .input-container {
+            background-color: #ffffffcc;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+        }
+
+        /* Styled table header */
+        thead tr th {
+            font-weight: bold;
+            background-color: #003865;
+            color: white;
+        }
+
+        /* Predict button style */
+        button[kind="primary"] {
+            background-color: #0077b6;
+            color: white;
+            font-weight: bold;
+            border-radius: 10px;
         }
     </style>
-    """,
-    unsafe_allow_html=True
-)
+""", unsafe_allow_html=True)
+
+
+
+st.markdown("""
+    <h1 style="text-align:center; font-weight:bold; color:#003865; padding:20px;">
+        💼 Salary Class Prediction Dashboard
+    </h1>
+""", unsafe_allow_html=True)
+
 
 # Load the trained model and encoders
 
@@ -30,7 +67,11 @@ le_sal = joblib.load("le_sal.pkl")
 
 # Load feature names and encoders
 feature_names = joblib.load("feature_names.pkl")
+st.markdown('<div class="input-container">', unsafe_allow_html=True)
+
 age = st.sidebar.slider("Age", 18, 65, 30)
+st.markdown('</div>', unsafe_allow_html=True)
+
 education = st.sidebar.selectbox("Education Level", ["Bachelor's", "Master's", "PhD", "Diploma"])
 occupation = st.sidebar.selectbox("Job Title", [
     "AI Researcher", "ML Engineer", "Software Engineer", "System Admin", "Data Engineer",
@@ -70,12 +111,37 @@ input_encoded_df = pd.DataFrame([{
 
 input_encoded_df = input_encoded_df[feature_names]
 
-
-st.markdown("""
-    <div style="background-color:#f9f9f9; padding:12px; border-radius:10px; margin-bottom:10px;">
-        <h4 style="text-align:center; font-weight:bold;">🎯 Input Features</h4>
-    </div>
+st.markdown(f"""
+    <style>
+        .stApp {{
+            background-image: url('{background_url}');
+            background-size: cover;
+            font-family: 'Segoe UI', sans-serif;
+        }}
+        h1, h2, h3, h4 {{
+            font-weight: 700;
+            color: #003865;
+        }}
+        .input-container {{
+            background-color: #ffffffcc;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+        }}
+        thead tr th {{
+            font-weight: bold;
+            background-color: #003865;
+            color: white;
+        }}
+        button[kind="primary"] {{
+            background-color: #0077b6;
+            color: white;
+            font-weight: bold;
+            border-radius: 10px;
+        }}
+    </style>
 """, unsafe_allow_html=True)
+
 
 st.table(input_display_df)
 
