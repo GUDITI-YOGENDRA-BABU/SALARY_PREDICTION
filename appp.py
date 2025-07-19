@@ -2,6 +2,18 @@ import streamlit as st
 import pandas as pd
 import joblib
 
+st.markdown(
+    """
+    <style>
+        .stApp {
+            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+            background-size: cover;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Load the trained model and encoders
 
 model = joblib.load("best_model3.pkl")
@@ -59,14 +71,25 @@ input_encoded_df = pd.DataFrame([{
 input_encoded_df = input_encoded_df[feature_names]
 
 
-st.write("Input Features ")
+st.markdown("""
+    <div style="background-color:#f9f9f9; padding:12px; border-radius:10px; margin-bottom:10px;">
+        <h4 style="text-align:center; font-weight:bold;">🎯 Input Features</h4>
+    </div>
+""", unsafe_allow_html=True)
+
 st.table(input_display_df)
 
 # Predict button
 if st.button("Predict Salary Class"):
     prediction = model.predict(input_encoded_df)
     decoded_salary = le_sal.inverse_transform(prediction)[0]
-    st.success(f"Predicted Salary : {decoded_salary}")
+   st.markdown(f"""
+    <div style="background-color:#d1e7dd; padding:20px; border-radius:10px; margin-top:20px;">
+        <h3 style="text-align:center; color:#0f5132; font-weight:bold;">
+            ✅ Predicted Salary: {decoded_salary}
+        </h3>
+    </div>
+""", unsafe_allow_html=True)
 
 
    
