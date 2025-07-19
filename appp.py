@@ -3,15 +3,16 @@ import pandas as pd
 import joblib
 
 # Load the trained model and encoders
+
 model = joblib.load("best_model3.pkl")
-le_edu = joblib.load("label_encoder_edu.pkl")
-le_occ = joblib.load("label_encoder_occ.pkl")
-le_exp = joblib.load("label_encoder_exp.pkl")
-le_emp = joblib.load("label_encoder_emp.pkl")
-le_loc = joblib.load("label_encoder_loc.pkl")
-le_comp = joblib.load("label_encoder_comp.pkl")
-le_dept = joblib.load("label_encoder_dept.pkl")
-le_skill = joblib.load("label_encoder_skill.pkl")
+le_exp = joblib.load("le_exp.pkl")
+le_emp = joblib.load("le_emp.pkl")
+le_job = joblib.load("le_job.pkl")
+le_loc = joblib.load("le_loc.pkl")
+le_comp = joblib.load("le_comp.pkl")
+le_dept = joblib.load("le_dept.pkl")
+le_skill = joblib.load("le_skill.pkl")
+le_edu = joblib.load("le_edu.pkl")
 
 st.set_page_config(page_title="Employee Salary Classification", page_icon="💼", layout="centered")
 st.title("💼 Employee Salary Prediction App")
