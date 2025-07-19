@@ -42,7 +42,7 @@ input_df = pd.DataFrame({
     'employment_type': [le_emp.transform(["Full-time"])[0]],  # or get from input
     'location': [le_loc.transform(["Chicago"])[0]],  # or get from input
     'company_size': [le_comp.transform(["Medium"])[0]],  # or get from input
-    'department': [le_dept.transform(["Engineering"])[0]],  # or get from input
+    'department': [le_dept.transform(["R&D "])[0]],  # or get from input
     'primary_skill': [le_skill.transform(["Python"])[0]]  # or get from input
 })
 
