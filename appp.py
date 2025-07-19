@@ -110,41 +110,15 @@ input_encoded_df = pd.DataFrame([{
 }])
 
 input_encoded_df = input_encoded_df[feature_names]
+background_url = "https://www.transparenttextures.com/patterns/connected.png"
 
 st.markdown(f"""
     <style>
         .stApp {{
-
-
-
-        
-            background-image: url('{background_url = "https://www.transparenttextures.com/patterns/connected.png"}');
-            background-size: cover;
-            font-family: 'Segoe UI', sans-serif;
-        }}
-        h1, h2, h3, h4 {{
-            font-weight: 700;
-            color: #003865;
-        }}
-        .input-container {{
-            background-color: #ffffffcc;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 0 12px rgba(0,0,0,0.1);
-        }}
-        thead tr th {{
-            font-weight: bold;
-            background-color: #003865;
-            color: white;
-        }}
-        button[kind="primary"] {{
-            background-color: #0077b6;
-            color: white;
-            font-weight: bold;
-            border-radius: 10px;
-        }}
-    </style>
+            background-image: url('{background_url}');
+            ...
 """, unsafe_allow_html=True)
+
 
 
 st.table(input_display_df)
