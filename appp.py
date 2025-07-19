@@ -83,13 +83,14 @@ st.table(input_display_df)
 if st.button("Predict Salary Class"):
     prediction = model.predict(input_encoded_df)
     decoded_salary = le_sal.inverse_transform(prediction)[0]
-   st.markdown(f"""
-    <div style="background-color:#d1e7dd; padding:20px; border-radius:10px; margin-top:20px;">
-        <h3 style="text-align:center; color:#0f5132; font-weight:bold;">
-            ✅ Predicted Salary: {decoded_salary}
-        </h3>
-    </div>
-""", unsafe_allow_html=True)
+    st.markdown(f"""
+        <div style="background-color:#d1e7dd; padding:20px; border-radius:10px; margin-top:20px;">
+            <h3 style="text-align:center; color:#0f5132; font-weight:bold;">
+                ✅ Predicted Salary: {decoded_salary}
+            </h3>
+        </div>
+    """, unsafe_allow_html=True)
+
 
 
    
