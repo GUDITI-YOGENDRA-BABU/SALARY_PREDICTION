@@ -31,9 +31,9 @@ occupation = st.sidebar.selectbox("Job Title", [
 # Optional: make these also user inputs
 experience_level = "Mid"
 employment_type = "Full-time"
-location = "India"
+location = "Chicago"
 company_size = "Medium"
-department = "Engineering"
+department = "R&D"
 primary_skill = "Python"
 
 # Encode input
