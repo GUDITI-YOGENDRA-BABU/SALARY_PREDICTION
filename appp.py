@@ -30,7 +30,8 @@ occupation = st.sidebar.selectbox("job_title", [
 input_df = pd.DataFrame({
     'age': [age],
     'education_level': [le_edu.transform([education])[0]],
-    'job_title': [le_job.transform([occupation])[0]],
+    'job_title': [le_occ.transform([occupation])[0]],
+
     # Add defaults or more user inputs for other columns
     'experience_level': [0],  # or a dropdown
     'employment_type': [0],
