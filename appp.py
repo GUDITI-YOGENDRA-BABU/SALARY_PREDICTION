@@ -15,7 +15,17 @@ le_skill = joblib.load("le_skill.pkl")
 le_edu = joblib.load("le_edu.pkl")
 feature_names = joblib.load("feature_names.pkl")
 
-
+input_df = pd.DataFrame([{
+    'age': ('age'),
+    'education_level': le_edu.transform([education])[0],
+    'job_title': le_job.transform([occupation])[0],
+    'experience_level': le_exp.transform([experience_level])[0],
+    'employment_type': le_emp.transform([employment_type])[0],
+    'location': le_loc.transform([location])[0],
+    'company_size': le_comp.transform([company_size])[0],
+    'department': le_dept.transform([department])[0],
+    'primary_skill': le_skill.transform([primary_skill])[0]
+}])
 
 # Ensure feature order matches model
 input_df = input_df[feature_names]
