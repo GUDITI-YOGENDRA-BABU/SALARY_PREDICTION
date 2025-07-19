@@ -33,7 +33,7 @@ employment_type = st.sidebar.selectbox("employment_type", ["Contract","Full-time
 location = st.sidebar.selectbox("location", ["Chicago","New York","Chicago","Remote","Los Angeles","Seattle","Boston","Austin","San Jose","San Francisco"])
 company_size = st.sidebar.selectbox("company_size", ["Large","Medium","Small"])
 department = st.sidebar.selectbox("department", ["Operations","R&D","HR","IT","Analytics","Product",])
-primary_skill = st.sidebar.selectbox("", ['Project Management","Machine Learning","Cloud","Python","Java","DevOps","C++","Deep Learning","Data Visualization","SQL"])
+primary_skill = st.sidebar.selectbox("primary_skill", ["Project Management","Machine Learning","Cloud","Python","Java","DevOps","C++","Deep Learning","Data Visualization","SQL"])
 
 # 1. Display human-readable inputs
 input_display_df = pd.DataFrame([{
