@@ -6,7 +6,7 @@ st.markdown(
     """
     <style>
         .stApp {
-            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+            background-image: url("cubes.png");
             background-size: cover;
         }
     </style>
