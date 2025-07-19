@@ -53,6 +53,10 @@ st.write(input_df)
 
 # Predict button
 if st.button("Predict Salary Class"):
+
+input_df = input_df[['age', 'education_level', 'job_title', 'experience_level',
+                     'employment_type', 'location', 'company_size', 'department', 'primary_skill']]
+
     prediction = model.predict(input_df)
     st.success(f"✅ Prediction: {prediction[0]}")
 
