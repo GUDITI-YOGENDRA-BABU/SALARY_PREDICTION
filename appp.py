@@ -1,3 +1,19 @@
+import streamlit as st
+import pandas as pd
+import joblib
+
+# Load the trained model and encoders
+
+model = joblib.load("best_model3.pkl")
+le_exp = joblib.load("le_exp.pkl")
+le_emp = joblib.load("le_emp.pkl")
+le_job = joblib.load("le_job.pkl")
+le_loc = joblib.load("le_loc.pkl")
+le_comp = joblib.load("le_comp.pkl")
+le_dept = joblib.load("le_dept.pkl")
+le_skill = joblib.load("le_skill.pkl")
+le_edu = joblib.load("le_edu.pkl")
+
 # Load feature names and encoders
 feature_names = joblib.load("feature_names.pkl")
 
