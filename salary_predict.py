@@ -135,9 +135,14 @@ print(f"\n✅ Best model: {best_model_name} with accuracy {results[best_model_na
 joblib.dump(best_model, "best_model3.pkl")
 joblib.dump(LabelEncoder, "label_encoder3.pkl")
 joblib.dump(Pipeline, 'salary_prediction_model3.pkl')
-joblib.dump(le_edu, "label_encoder_edu.pkl")
-joblib.dump(le_job, "label_encoder_occ.pkl")
-# Save others if needed
+le_job = joblib.load("le_job.pkl")
+le_exp = joblib.load("le_exp.pkl")
+le_emp = joblib.load("le_emp.pkl")
+le_loc = joblib.load("le_loc.pkl")
+le_comp = joblib.load("le_comp.pkl")
+le_dept = joblib.load("le_dept.pkl")
+le_skill = joblib.load("le_skill.pkl")
+
 
 
 print("✅ Saved best model as best_model3.pkl")
