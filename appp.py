@@ -40,7 +40,7 @@ primary_skill = "Python"
 input_df = pd.DataFrame({
     'age': [age],
     'education_level': [le_edu.transform([education])[0]],
-    'job_title': [le_occ.transform([occupation])[0]],
+    'job_title': [le_job.transform([occupation])[0]],
     'experience_level': [le_exp.transform([experience_level])[0]],
     'employment_type': [le_emp.transform([employment_type])[0]],
     'location': [le_loc.transform([location])[0]],
