@@ -114,7 +114,11 @@ input_encoded_df = input_encoded_df[feature_names]
 st.markdown(f"""
     <style>
         .stApp {{
-            background-image: url('{background_url}');
+
+
+
+        
+            background-image: url('{background_url = "https://www.transparenttextures.com/patterns/connected.png"}');
             background-size: cover;
             font-family: 'Segoe UI', sans-serif;
         }}
