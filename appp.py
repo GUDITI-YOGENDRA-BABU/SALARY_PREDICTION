@@ -30,8 +30,15 @@ occupation = st.sidebar.selectbox("job_title", [
 input_df = pd.DataFrame({
     'age': [age],
     'education_level': [le_edu.transform([education])[0]],
-    'job_title': [le_occ.transform([occupation])[0]],
+    'job_title': [le_job.transform([occupation])[0]],
+    'experience_level': [le_exp.transform(["Mid"])[0]],  # or get from input
+    'employment_type': [le_emp.transform(["Full-time"])[0]],  # or get from input
+    'location': [le_loc.transform(["India"])[0]],  # or get from input
+    'company_size': [le_comp.transform(["Medium"])[0]],  # or get from input
+    'department': [le_dept.transform(["Engineering"])[0]],  # or get from input
+    'primary_skill': [le_skill.transform(["Python"])[0]]  # or get from input
 })
+
 
 
 st.write("### 🔎 Input Data")
