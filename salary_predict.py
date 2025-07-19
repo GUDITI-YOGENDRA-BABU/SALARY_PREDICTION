@@ -141,6 +141,7 @@ le_loc = joblib.load("le_loc.pkl")
 le_comp = joblib.load("le_comp.pkl")
 le_dept = joblib.load("le_dept.pkl")
 le_skill = joblib.load("le_skill.pkl")
+joblib.dump(list(x.columns), 'feature_names.pkl')
 
 
 
